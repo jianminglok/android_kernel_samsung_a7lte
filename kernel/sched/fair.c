@@ -2216,6 +2216,7 @@ int sched_hmp_proc_update_handler(struct ctl_table *table, int write,
 	int update_min_nice = 0;
 
 	ret = proc_dointvec_minmax(table, write, buffer, lenp, ppos);
+
 	if (ret || !write || !sched_enable_hmp)
 		return ret;
 
